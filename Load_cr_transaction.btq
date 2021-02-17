@@ -1,4 +1,4 @@
-.LOGON 192.168.112.128/sysdba,learning;
+.LOGON dbc/sysdba,learning;
 
 INSERT INTO cr_slipstream_telecom.cr_transaction ( subscriber_id, plan_type, data_consumed, voice_time, sms_used, load_date,run_date)
 SELECT coalesce(d.subscriber_id,v.subscriber_id),
@@ -14,3 +14,5 @@ and d.load_date = v.load_date;
 
 .LOGOFF;
 
+
+20:28 17-02-2021

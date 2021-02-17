@@ -1,4 +1,4 @@
-.LOGON 192.168.112.128/Sysdba,learning;
+.LOGON dbc/Sysdba,learning;
 
 insert into stg_slipstream_telecom.stg_cust_profile
 select CAST(Subscriber_id AS NUMBER(10)),
@@ -32,5 +32,7 @@ AND stg_cust_profile.subscriber_id = stg_slipstream_telecom.stg_cust_stats.subsc
 
 UPDATE stg_slipstream_telecom.stg_cust_profile SET address = REGEXP_REPLACE(address,'š','/b');
 
-.LOGOFF
+.LOGOFF;
 
+
+20:30 17-02-2021

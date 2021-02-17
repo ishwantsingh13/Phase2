@@ -1,4 +1,4 @@
-.LOGON 192.168.112.128/Sysdba,learning;
+.LOGON dbc/Sysdba,learning;
 
 insert into stg_slipstream_telecom.stg_cust_stats
 select 
@@ -14,5 +14,7 @@ select
 FROM lnd_slipstream_telecom.lnd_cust_stats;
 
 
-.LOGOFF
+.LOGOFF;
 
+
+20:30 17-02-2021

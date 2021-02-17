@@ -1,4 +1,4 @@
-.LOGON 192.168.112.128/sysdba,learning;
+.LOGON dbc/sysdba,learning;
 
 
 
@@ -397,3 +397,5 @@ primary index( subscriber_id);
 .LOGOFF;
 
 3:54 PM 2/15/2021
+
+20:26 17-02-2021

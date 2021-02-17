@@ -1,4 +1,4 @@
-.LOGON 192.168.112.128/Sysdba,learning;
+.LOGON dbc/Sysdba,learning;
 insert into stg_slipstream_telecom.stg_plan_master
 SELECT  Plan_type, 
 	Plan_Des,
@@ -13,4 +13,8 @@ SELECT  Plan_type,
 	CAST(sms_rate AS DECIMAL(4,2))
 FROM lnd_slipstream_telecom.lnd_plan_master;
 
-.LOGOFF
+.LOGOFF;
+
+20:31 17-02-2021
+
+20:31 17-02-2021
