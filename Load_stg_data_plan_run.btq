@@ -1,4 +1,4 @@
-.LOGON 192.168.112.128/Sysdba,learning;
+.LOGON dbc/Sysdba,learning;
 
 
 DELETE FROM stg_slipstream_telecom.stg_data_plan_run;
@@ -19,4 +19,6 @@ SELECT subscriber_id(NUMBER(10)),
 		as date format 'mm-dd-yyyy') 
  FROM lnd_slipstream_telecom.lnd_data_plan_run;
 
-.LOGOFF
+.LOGOFF;
+
+20:30 17-02-2021
