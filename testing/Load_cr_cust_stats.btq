@@ -1,0 +1,7 @@
+.LOGON dbc/sysdba,learning;
+
+INSERT INTO crtest_slipstream_telecom.cr_cust_stats
+SELECT subscriber_id,paid_date,CURRENT_DATE
+FROM stgtest_slipstream_telecom.stg_cust_stats;
+
+.LOGOFF;
