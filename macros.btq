@@ -1,5 +1,5 @@
 
-.LOGON 192.168.112.128/sysdba,learning;
+.LOGON dbc/sysdba,learning;
 
 CREATE MACRO delete_data_plan_run AS ( 
    DELETE FROM lnd_slipstream_telecom.lnd_data_plan_run; 
@@ -39,4 +39,4 @@ CREATE MACRO bill AS
 	SELECT * FROM cr_slipstream_telecom.cr_bill;
 );
 
-.LOGOFF
+.LOGOFF;
