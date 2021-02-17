@@ -1,4 +1,4 @@
-.LOGON 192.168.112.128/sysdba,learning;
+.LOGON dbc/sysdba,learning;
 
 INSERT INTO cr_slipstream_telecom.cr_cust_stats
 SELECT subscriber_id,paid_date,CURRENT_DATE
@@ -6,3 +6,5 @@ FROM stg_slipstream_telecom.stg_cust_stats;
 
 .LOGOFF
 
+
+20:27 17-02-2021
