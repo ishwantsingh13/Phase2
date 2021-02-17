@@ -1,4 +1,4 @@
-# Phase2 (SlipstreamTelecom.)
+Phase2 (SlipstreamTelecom.)
 ---------------------------------------------------------------------------------
 This is the phase 2 implementation of the project where goals to be implemented
 1.loading of historical data (automated)
