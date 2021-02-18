@@ -1,6 +1,6 @@
 Phase2 (SlipstreamTelecom.)
 ---------------------------------------------------------------------------------
-This is the phase 2 implementation of the project where goals to be implemented
+contains following goals implemented :
 1.loading of historical data (automated)
 2.audit and logging framework for the monitoring 
 3.incremental load process
