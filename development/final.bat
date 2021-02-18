@@ -37,7 +37,6 @@ bteq < Load_stg_data_plan_run.btq
 bteq< stg_backup_run.btq
 
 bteq < Load_cr_transaction.btq
-bteq< cr_backup_run.btq
 ::===============================================================
 :: DAY 2							=
 ::								=
@@ -54,7 +53,7 @@ bteq < Load_stg_data_plan_run.btq
 bteq< stg_backup_run.btq
 
 bteq < Load_cr_transaction.btq
-bteq< cr_backup_run.btq
+
 ::===============================================================
 :: DAY 3							=
 ::								=
