@@ -1,5 +1,0 @@
-.LOGON dbc/sysdba,learning;
-
-EXEC delete_data_plan_run_test;
-
-.LOGOFF;

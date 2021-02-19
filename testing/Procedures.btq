@@ -1,8 +1,0 @@
-.LOGON dbc/sysdba,learning;
-
-.COMPILE FILE = data_consumed.sql;
-.COMPILE FILE = sms_cal.sql;
-.COMPILE FILE = voice_cal.sql;
-
-
-.LOGOFF;
