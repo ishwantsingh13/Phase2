@@ -40,9 +40,18 @@ INTEGER TenacitySleep = 1,
 VARCHAR WildCardInsert = 'Y' /*Not default*/
 );
 
+DEFINE OPERATOR DDL_OPERATOR
+TYPE DDL
 
+   ATTRIBUTES
+   (
+      VARCHAR PrivateLogName = 'audit_log',
+      VARCHAR TdpId          = '192.168.112.128',
+      VARCHAR UserName       = 'sysdba',
+      VARCHAR UserPassword   = 'learning'
+   );
 
-
+STEP first_step(
 
 APPLY 
 	('INSERT INTO lnd_slipstream_telecom.lnd_data_plan_run
@@ -50,5 +59,21 @@ APPLY
        )
 	TO OPERATOR (update_lnd_data_plan_run[1])
 	SELECT * FROM OPERATOR (File_Reader[1]);
+);
+STEP second_step(
+	APPLY('INSERT INTO audit_table values(''lnd_data_plan_run.btq'',
+				''lnd_slipstream_telecom'',
+				''lnd_data_plan_run'',
+				''INSERT INTO lnd_slipstream_telecom.lnd_data_plan_run'',
+				CURRENT_TIME,
+			  	CURRENT_TIME,
+				CURRENT_DATE,
+				(SELECT COUNT(*) FROM lnd_slipstream_telecom.lnd_data_plan_run),
+				CASE 
+				     WHEN (SELECT COUNT(*) FROM lnd_slipstream_telecom.lnd_data_plan_run)=0 THEN ''FAIL''
+				     ELSE ''SUCCESS''
+				END);')
+	 TO OPERATOR(DDL_OPERATOR[1]);
+		);
 
 );

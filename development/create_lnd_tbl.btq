@@ -40,8 +40,6 @@ CREATE DATABASE "cr_slipstream_telecom" FROM "Sysdba" AS
 
 
 
-
-
 CREATE MULTISET TABLE lnd_Slipstream_Telecom.lnd_cust_stats ,FALLBACK ,
      NO BEFORE JOURNAL,
      NO AFTER JOURNAL,
@@ -392,12 +390,22 @@ create table cr_slipstream_telecom.cr_bill(
 primary index( subscriber_id);
   
 
-
+CREATE MULTISET TABLE SYSDBA.audit_table ,FALLBACK ,
+     NO BEFORE JOURNAL,
+     NO AFTER JOURNAL,
+     CHECKSUM = DEFAULT,
+     DEFAULT MERGEBLOCKRATIO,
+     MAP = TD_MAP1
+     (
+      jobname VARCHAR(40) CHARACTER SET LATIN CASESPECIFIC,
+      target_db VARCHAR(40) CHARACTER SET LATIN CASESPECIFIC,
+      target_table VARCHAR(40) CHARACTER SET LATIN CASESPECIFIC,
+      query_text VARCHAR(200) CHARACTER SET LATIN CASESPECIFIC,
+      start_time TIME(6),
+      end_time TIME(6),
+      load_date DATE FORMAT 'YY/MM/DD',
+      rows_affected INTEGER,
+      exec_result VARCHAR(20) CHARACTER SET LATIN CASESPECIFIC)
+PRIMARY INDEX ( jobname );
 
 .LOGOFF;
-
-3:54 PM 2/15/2021
-
-20:26 17-02-2021
-
-10:51 18-02-2021
